@@ -3,6 +3,42 @@
 <head>
 
 <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+
+
+
+<style>
+  .collapsible {
+    background-color: #CFDBC5;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .collapsible.active, .collapsible:hover {
+    background-color: #bf6423;
+  }
+
+  .colcontent {
+  padding: 0 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #CFDBC5;
+}
+
+
+
+
+  
+  
+  </style>
+
+
 </head>
 <body>
 
@@ -32,14 +68,44 @@
 <div class="clearfix">
   <div class="column content">
     <ul>
-     <h3><a href="https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year4/ma426/">2022-2023 Term 2, MA426 Elliptic Curves</a></h3>
-     <h3><a href="https://cambridgelectures.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx?folderID=030cad6b-e198-40e9-8ee1-ac9200ccf1c1">2021 Lent term Part III Fractal Geometry (and additive combinatorics) (This is not a public lecture)</a></h3>
+      <button class="collapsible">Elliptic Curves MA426 22-23 Warwick</button>
+      <div class="colcontent">
+        <h3><a href="https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year4/ma426/">Basic Information</a></h3>
+        <h3>
+            <a>Lecture Notes (to come)</a>
+            <a>Recordings (to come)</a>
+
+
+        </h3>
+
+        
+
+
+
+      </div>  
+    
+
+    <button class="collapsible">Fractal Geometry 2021 Lent Term Cambridge</button>
+    <div class="colcontent">  
+      <h3><a href="https://cambridgelectures.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx?folderID=030cad6b-e198-40e9-8ee1-ac9200ccf1c1">2021 Lent term Part III Fractal Geometry (and additive combinatorics) (This is not a public lecture)</a>
+    </h3>
+      </div>
+    
+
+
+    <button class="collapsible">Other Recorded Talks</button>
+      <div class="colcontent">
+       
+
+     
      <h3><a href="https://www.youtube.com/playlist?list=PLsDn5JyJXoYIPOj9--SJFpjlJaceQnvVr">2020 Irrational rotation and number theory</a></h3>
 
 <h3><a href="https://lively-cat-lover.github.io/DAHD-webinar/diophantine/approximation/2020/11/25/Han-Yu.html">2020 DAHD Seminar: Rational points near self-similar sets</a></h3>
 
 <h3><a href="https://youtu.be/jj9-8AhFQk8">2021 New England Dynamics and Number Theory Seminar: Rational points near self-similar sets again</a></h3>
-    </ul>
+</div>    
+
+</ul>
   </div>
 
 
@@ -54,6 +120,23 @@ var hostname = "warwick.ac.uk";
 var linktext = username + "@" + hostname ;
 document.write( username + "@" + hostname );
 </script></p>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
 
 
 <div>
